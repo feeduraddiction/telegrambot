@@ -13,7 +13,7 @@ export const Form = () => {
 
   const onSendData = useCallback(() => {
     tg.sendData(data);
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     tg.onEvent("mainButtonClicked", onSendData);
