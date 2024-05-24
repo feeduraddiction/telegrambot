@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./style.css";
 import { Button } from "../Button/Button";
 import { useTelegram } from "../../hook/useTelegram";
@@ -10,6 +10,17 @@ export const Form = () => {
     subject: "individual",
   });
   const { tg } = useTelegram();
+
+  const onSendData = useCallback(() => {
+    tg.sendData(data);
+  }, []);
+
+  useEffect(() => {
+    tg.onEvent("mainButtonClicked", onSendData);
+    return () => {
+      tg.offEvent("mainButtonClicked", onSendData);
+    };
+  }, []);
 
   useEffect(() => {
     tg.MainButton.setParams({
@@ -32,11 +43,6 @@ export const Form = () => {
       ...prevState,
       [type]: value,
     }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(data);
   };
 
   return (
