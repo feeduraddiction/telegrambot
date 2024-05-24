@@ -41,32 +41,29 @@ export const Form = () => {
 
   return (
     <div className="form">
-      <form className="form" onSubmit={handleSubmit}>
-        <h3>Введите Ваши данные</h3>
-        <input
-          onChange={handleChangeData("country")}
-          value={data.country}
-          className="input"
-          type="text"
-          placeholder="Страна"
-        />
-        <input
-          value={data.city}
-          className="input"
-          type="text"
-          placeholder="Город"
-          onChange={handleChangeData("city")}
-        />
-        <select
-          value={data.subject}
-          onChange={handleChangeData("subject")}
-          className="select"
-        >
-          <option value="legal">Юр лицо</option>
-          <option value="individual">Физ лицо</option>
-        </select>
-        <Button type="submit">Отправить</Button>
-      </form>
+      <h3>Введите Ваши данные</h3>
+      <input
+        onChange={handleChangeData("country")}
+        value={data.country}
+        className="input"
+        type="text"
+        placeholder="Страна"
+      />
+      <input
+        value={data.city}
+        className="input"
+        type="text"
+        placeholder="Город"
+        onChange={handleChangeData("city")}
+      />
+      <select
+        value={data.subject}
+        onChange={handleChangeData("subject")}
+        className="select"
+      >
+        <option value="legal">Юр лицо</option>
+        <option value="individual">Физ лицо</option>
+      </select>
     </div>
   );
 };
