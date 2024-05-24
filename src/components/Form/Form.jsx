@@ -12,7 +12,7 @@ export const Form = () => {
   const { tg } = useTelegram();
 
   const onSendData = useCallback(() => {
-    tg.sendData(data);
+    tg.sendData(JSON.stringify(data));
   }, [data]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export const Form = () => {
     return () => {
       tg.offEvent("mainButtonClicked", onSendData);
     };
-  }, []);
+  }, [onSendData]);
 
   useEffect(() => {
     tg.MainButton.setParams({
