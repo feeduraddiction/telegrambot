@@ -77,14 +77,15 @@ export const ProductList = () => {
   };
   const [addedItems, setAddedItems] = useState([]);
 
-  const { tg } = useTelegram();
+  const { tg, queryId } = useTelegram();
 
   const onSendData = useCallback(() => {
     const data = {
       product: addedItems,
       totalPrice: getTotalPrice(addedItems),
+      queryId,
     };
-    fetch("http://localhost:8000", {
+    fetch("http://localhost:8000/web-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
