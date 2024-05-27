@@ -94,6 +94,12 @@ export const ProductList = () => {
     });
   }, [addedItems]);
 
+  const handleCheck = async () => {
+    await fetch(
+      "https://telegrambot-backend-seven.vercel.app/check-connection"
+    );
+  };
+
   useEffect(() => {
     tg.onEvent("mainButtonClicked", onSendData);
     return () => {
@@ -126,6 +132,7 @@ export const ProductList = () => {
 
   return (
     <div className="list">
+      <button onClic={handleCheck}>check connection</button>
       {products.map((product) => (
         <ProductItem product={product} onAdd={onAdd} />
       ))}
