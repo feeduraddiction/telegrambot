@@ -132,7 +132,7 @@ export const ProductList = () => {
 
   return (
     <div className="list">
-      <button onClick={handleCheck}>check connection</button>
+      {/* <button onClick={handleCheck}>check connection</button> */}
       {products.map((product) => (
         <ProductItem product={product} onAdd={onAdd} />
       ))}
