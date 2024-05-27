@@ -85,7 +85,7 @@ export const ProductList = () => {
       totalPrice: getTotalPrice(addedItems),
       queryId,
     };
-    fetch("http://localhost:8000/web-data", {
+    fetch("https://telegrambot-backend-seven.vercel.app/web-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -126,6 +126,7 @@ export const ProductList = () => {
 
   return (
     <div className="list">
+      <button onClick={onSendData}>1</button>
       {products.map((product) => (
         <ProductItem product={product} onAdd={onAdd} />
       ))}
