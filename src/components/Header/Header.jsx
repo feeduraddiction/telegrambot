@@ -11,6 +11,7 @@ export const Header = () => {
       <div className="user">
         <div className="img">
           <img src={user?.photo_url} alt="user-photo" />
+          <a href={user?.photo_url}>{user?.photo_url}</a>
         </div>
         <div className="name">
           <span className="username">{user?.username || "username"}</span>
