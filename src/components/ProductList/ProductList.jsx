@@ -87,13 +87,13 @@ export const ProductList = () => {
       queryId,
     };
     await tg.sendData(JSON.stringify(data));
-    await fetch("https://telegrambot-backend-seven.vercel.app/web-data", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    // await fetch("https://telegrambot-backend-seven.vercel.app/web-data", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // });
   }, [addedItems]);
 
   const handleCheck = async () => {
