@@ -2,7 +2,6 @@ import { useCallback, useState, useEffect } from "react";
 import { ProductItem } from "../ProductItem/ProductItem";
 import "./style.css";
 import { useTelegram } from "../../hook/useTelegram";
-import { Button } from "../Button/Button";
 
 const products = [
   {
@@ -86,7 +85,7 @@ export const ProductList = () => {
       totalPrice: getTotalPrice(addedItems),
       queryId,
     };
-    await fetch("http://localhost:8000/web-data", {
+    await fetch("https://telegrambot-backend-seven.vercel.app/web-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -96,7 +95,9 @@ export const ProductList = () => {
   }, [addedItems]);
 
   const handleCheck = async () => {
-    await fetch("http://localhost:8000/check-connection");
+    await fetch(
+      "https://telegrambot-backend-seven.vercel.app/check-connection"
+    );
   };
 
   useEffect(() => {
@@ -130,13 +131,10 @@ export const ProductList = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleCheck}>check</button>
-      <div className="list">
-        {products.map((product) => (
-          <ProductItem product={product} onAdd={onAdd} />
-        ))}
-      </div>
+    <div className="list">
+      {products.map((product) => (
+        <ProductItem product={product} onAdd={onAdd} />
+      ))}
     </div>
   );
 };
