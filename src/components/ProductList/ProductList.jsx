@@ -126,7 +126,7 @@ export const ProductList = () => {
     } else {
       tg.MainButton.show();
       tg.MainButton.setParams({
-        text: `Купить ${(getTotalPrice(newItems)/100).toFixed(2)}`,
+        text: `Купить ${(getTotalPrice(newItems)/100).toFixed(2)} $`,
       });
     }
   };
