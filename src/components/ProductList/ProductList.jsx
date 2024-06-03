@@ -96,9 +96,7 @@ export const ProductList = () => {
   }, [addedItems]);
 
   const handleCheck = async () => {
-    await fetch(
-      "http://localhost:8000/check-connection"
-    );
+    await fetch("http://localhost:8000/check-connection");
   };
 
   useEffect(() => {
@@ -132,11 +130,13 @@ export const ProductList = () => {
   };
 
   return (
-    <div className="list">
-      123
-      {products.map((product) => (
-        <ProductItem product={product} onAdd={onAdd} />
-      ))}
+    <div>
+      <button onClick={handleCheck}>check</button>
+      <div className="list">
+        {products.map((product) => (
+          <ProductItem product={product} onAdd={onAdd} />
+        ))}
+      </div>
     </div>
   );
 };
