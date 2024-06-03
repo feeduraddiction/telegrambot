@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     tg.ready();
     tg.expand();
-    console.log(tg.initDataUnsafe?.chat, tg.initDataUnsafe);
+    console.log(tg);
   }, []);
 
   return (
