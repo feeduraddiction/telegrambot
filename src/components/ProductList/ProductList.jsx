@@ -77,13 +77,14 @@ export const ProductList = () => {
   };
   const [addedItems, setAddedItems] = useState([]);
 
-  const { tg, queryId } = useTelegram();
+  const { tg, queryId, chatId } = useTelegram();
 
   const onSendData = useCallback(async () => {
     const data = {
       product: addedItems,
       totalPrice: getTotalPrice(addedItems),
       queryId,
+      chatId,
     };
     await fetch("https://telegrambot-backend-seven.vercel.app/web-data", {
       method: "POST",
