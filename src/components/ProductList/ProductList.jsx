@@ -81,7 +81,7 @@ export const ProductList = () => {
 
   const onSendData = useCallback(async () => {
     const data = {
-      product: addedItems,
+      products: addedItems,
       totalPrice: getTotalPrice(addedItems),
       queryId,
       chatId,
