@@ -86,7 +86,7 @@ export const ProductList = () => {
       totalPrice: getTotalPrice(addedItems),
       queryId,
     };
-    await fetch("https://telegrambot-backend-seven.vercel.app/web-data", {
+    await fetch("http://localhost:8000/web-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -97,7 +97,7 @@ export const ProductList = () => {
 
   const handleCheck = async () => {
     await fetch(
-      "https://telegrambot-backend-seven.vercel.app/check-connection"
+      "http://localhost:8000/check-connection"
     );
   };
 
@@ -133,6 +133,7 @@ export const ProductList = () => {
 
   return (
     <div className="list">
+      123
       {products.map((product) => (
         <ProductItem product={product} onAdd={onAdd} />
       ))}
