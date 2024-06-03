@@ -15,7 +15,6 @@ export function useTelegram() {
     }
   };
 
-  console.log(tg.initDataUnsafe?.chat);
 
   return {
     onClose,

@@ -8,11 +8,12 @@ import { Form } from "./components/Form/Form";
 import { ProductList } from "./components/ProductList/ProductList";
 
 function App() {
-  const { onToggleButton, tg } = useTelegram();
+  const { tg } = useTelegram();
 
   useEffect(() => {
     tg.ready();
     tg.expand();
+    console.log(tg.initDataUnsafe?.chat, tg.initDataUnsafe);
   }, []);
 
   return (
