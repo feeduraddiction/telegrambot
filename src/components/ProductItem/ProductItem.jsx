@@ -13,7 +13,7 @@ export const ProductItem = ({ product, onAdd }) => {
       <div className="description">{product.description}</div>
       <div className="price">
         <span>
-          Стоимость: <b>{product.price}</b>
+          Стоимость: <b>{(product.price / 100).toFixed(2)} $</b>
         </span>
       </div>
       <Button className="add-btn" onClick={handleAdd}>
